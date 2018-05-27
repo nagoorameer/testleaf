@@ -265,17 +265,20 @@ public class SeMethods extends Reporter implements WdMethods{
 			reportStep("Unknown exception occured while verifying the Attribute Text", "FAIL");
 		}
 	}
-
-	public void verifySelected(WebElement ele) {
+	
+	public boolean verifySelected(WebElement ele) {
 		try {
 			if(ele.isSelected()) {
 				reportStep("The element "+ele+" is selected","PASS");
+				return true;
 			} else {
 				reportStep("The element "+ele+" is not selected","FAIL");
+				return false;
 			}
 		} catch (WebDriverException e) {
 			reportStep("WebDriverException : "+e.getMessage(), "FAIL");
 		}
+		return false;
 	}
 
 	public void verifyDisplayed(WebElement ele) {

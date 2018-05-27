@@ -121,7 +121,7 @@ public interface WdMethods {
 		 * @param ele   - The Webelement (Radio button, Checkbox) to be verified
 		 * @author Babu - TestLeaf
 		 */
-		public void verifySelected(WebElement ele);
+		public boolean verifySelected(WebElement ele);
 		
 		/**
 		 * This method will verify if the element is visible in the DOM
